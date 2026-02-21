@@ -1,0 +1,23 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: rgb(34, 34, 34);
+    background-size: cover;
+    background-position: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: rgba(0, 0, 0, .50);
+    text-align: center;
+    border-radius: 1em;
+    border: 1px white solid;
+}
