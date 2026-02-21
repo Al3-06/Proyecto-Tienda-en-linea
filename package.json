@@ -1,0 +1,24 @@
+{
+  "name": "web-node",
+  "version": "1.0.0",
+  "description": "Proyecto 4A",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Team 4",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-validator": "^7.3.1",
+    "multer": "^2.0.2",
+    "nodemon": "^3.1.11",
+    "path": "^0.12.7",
+    "pg": "^8.16.3",
+    "pool": "^0.4.1"
+  }
+}
