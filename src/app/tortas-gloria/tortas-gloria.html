@@ -1,0 +1,260 @@
+<html>
+<header>
+  <nav class="navbar bg-body-bg">
+    <div class="container-fluid" style="margin: auto 15%;">
+      <a class="navbar-brand" href="#seccion-1">
+        <img src="img/logo.jpg" alt="Logo" width="30" height="30" style="border-radius: 3em;"
+          class="d-inline-block align-text-top">
+        Torteria Gloria
+      </a>
+      <div class="link_nav">
+        <a href="#seccion-2">Tortas</a>
+        <a href="#seccion-3">Historia</a>
+        <a href="#seccion-4">Caridad</a>
+      </div>
+      <button class="btn_nav-active" id="btn_nav" onclick="click"><i class="bi bi-list"></i></button>
+      <div class="nav_respon" id="nav_respon">
+        <i class="bi bi-fork-knife" style="font-size: xxx-large;"></i>
+        <a href="#seccion-2">Tortas</a>
+        <a href="#seccion-3">Historia</a>
+        <a href="#seccion-4">Caridad</a>
+      </div>
+    </div>
+
+  </nav>
+</header>
+<Main>
+  <div class="seccion_1 secciones" id="seccion-1">
+    <div class="info_Prin info">
+      <i class="bi bi-fork-knife"></i>
+      <br><br>
+      <h1 style="font-size: xxx-large;"><b>Tortería Gloria</b></h1>
+      <article>Tradición familiar desde 2010. Sabores auténticos mexicanos preparados con amor y los mejores
+        ingredientes frescos.</article>
+    </div>
+    <div class="info_secun info">
+      <div>
+        <i class="bi bi-egg-fried"></i>
+        <h4><b>Recetas Tradicionales</b></h4>
+        <p>Preparadas con recetas familiares transmitidas por generaciones</p>
+      </div>
+      <div>
+        <i class="bi bi-clock-history"></i>
+        <h4><b>Frescura Garantizada</b></h4>
+        <p>Ingredientes frescos preparados diariamente para el mejor sabor</p>
+      </div>
+      <div>
+        <i class="bi bi-geo-alt"></i>
+        <h4><b>Servicio Local</b></h4>
+        <p>Comprometidos con nuestra comunidad desde hace más de una década</p>
+      </div>
+    </div>
+  </div>
+  <div class="seccion_2" id="seccion-2">
+    <h2>PRODUCTOS</h2>
+    
+    <div class="conten-cards">
+      @for (product of listProducts; track product.product_id) {
+      <div class="card">
+        <img [src]="'/img/' + product.img" alt="img">
+        <div class="card-body">
+          <h4>{{product.name}}</h4>
+          <p>{{product.price}}</p>
+          <button class="btn btn-outline-info">Ver más</button>
+        </div>
+      </div>
+    } @empty {
+      <p class="text-center">No hay productos disponibles.</p>
+    }
+    </div>
+
+  </div>
+
+  <div class="secccion_3 secciones" id="seccion-3">
+    <div class="info_Prin">
+      <h2>Nuestra Historia</h2>
+      <article>Un recorrido por los momentos más importantes que han marcado el crecimiento de Tortería Gloria
+      </article>
+    </div>
+
+    <div class="linea_tiempo">
+
+      <div>
+        <i class="bi bi-star posicion_up"></i>
+        <div class="info_linea posicion_right">
+          <article class="fechas">2010</article>
+          <h5>Fundación de Tortería Gloria</h5>
+          <p>Inició como un pequeño negocio familiar con recetas tradicionales mexicanas transmitidas por
+            generaciones.</p>
+        </div>
+      </div>
+      <div>
+        <div class="info_linea posicion_left">
+          <article class="fechas">2015</article>
+          <h5>Primera Sucursal</h5>
+          <p>Apertura de la primera sucursal debido al crecimiento y reconocimiento en la comunidad local.
+          </p>
+        </div>
+        <i class="bi bi-clock posicion_up"></i>
+      </div>
+      <div>
+        <i class="bi bi-trophy posicion_up"></i>
+        <div class="info_linea posicion_right">
+          <article class="fechas">2018</article>
+          <h5>Reconocimiento Regional</h5>
+          <p>Tortería Gloria fue reconocida como una de las mejores torterías tradicionales de la región.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="info_linea posicion_left">
+          <article class="fechas">2020</article>
+          <h5>Expansión Regional</h5>
+          <p>Expansión a múltiples ubicaciones manteniendo siempre la calidad y tradición familiar.</p>
+        </div>
+        <i class="bi bi-heart posicion_up"></i>
+      </div>
+      <div>
+        <i class="bi bi-star posicion_up"></i>
+        <div class="info_linea posicion_right">
+          <article class="fechas">2024</article>
+          <h5>Actualidad</h5>
+          <p>Continuamos sirviendo a nuestra comunidad con el mismo amor y dedicación de siempre, ahora
+            con
+            servicio en línea.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cont_info_line posicion_up">
+      <h3>Más de una década sirviendo con amor</h3>
+      <p>Nuestra historia continúa escribiéndose cada día gracias a la confianza de nuestros clientes</p>
+    </div>
+  </div>
+  <div class="seccion_4 secciones" id="seccion-4">
+    <div class="info_Prin">
+      <h2>Compromiso Social</h2>
+      <article>En Tortería Gloria creemos en retribuir a nuestra comunidad. Conoce nuestras actividades de
+        apoyo social y compromiso comunitario.</article>
+    </div>
+    <div class="cont_btn_search">
+      <button onclick="click" class="boton" id="todos"><i class="bi bi-heart"></i> Todos</button>
+      <button onclick="click" class="boton" id="deportes"><i class="bi bi-dribbble"></i> Deportes</button>
+      <button onclick="click" class="boton" id="eventos"><i class="bi bi-calendar"></i> Eventos</button>
+      <button onclick="click" class="boton" id="donaciones"><i class="bi bi-gift"></i> Donaciones</button>
+      <button onclick="click" class="boton" id="comunidades"><i class="bi bi-people"></i> Comunidad</button>
+    </div>
+    <div class="card_Social">
+      <div class="card" id="deporte">
+        <img src="img/deporte.jpg" class="card-img-top h-50" alt="img de fondo">
+        <div class="logo_card"><i class="bi bi-dribbble"></i></div>
+        <div class="card-body">
+          <article>Deportes</article>
+          <h5 class="card-title">Patrocinio de Equipos de Fútbol</h5>
+          <p class="card-text">Apoyamos a equipos locales de fútbol juvenil proporcionando uniformes y
+            apoyo nutricional.</p>
+        </div>
+      </div>
+      <div class="card" id="evento">
+        <img src="img/evento.jpg" class="card-img-top h-50" alt="img de fondo">
+        <div class="logo_card"><i class="bi bi-dribbble"></i></div>
+        <div class="card-body">
+          <article>Eventos</article>
+          <h5 class="card-title">Celebración de Aniversarios</h5>
+          <p class="card-text">Organizamos eventos especiales para celebrar aniversarios importantes de
+            nuestra comunidad.</p>
+        </div>
+      </div>
+      <div class="card" id="donacion">
+        <img src="/img/donacion.jpg" class="card-img-top h-50" alt="img de fondo">
+        <div class="logo_card"><i class="bi bi-gift"></i></div>
+        <div class="card-body">
+          <article>Donaciones</article>
+          <h5 class="card-title">Donativos a Familias Necesitadas</h5>
+          <p class="card-text">Proporcionamos comida gratuita a familias en situación vulnerable durante
+            fechas especiales.</p>
+        </div>
+      </div>
+      <div class="card" id="comunidad">
+        <img src="img/apoyo.jpg" class="card-img-top h-50" alt="img de fondo">
+        <div class="logo_card"><i class="bi bi-people"></i></div>
+        <div class="card-body">
+          <article>Comunidad</article>
+          <h5 class="card-title">Eventos Comunitarios</h5>
+          <p class="card-text">Participamos activamente en ferias y eventos locales para fortalecer los
+            lazos comunitarios.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cont_impact">
+      <h4>Nuestro Impacto</h4>
+      <br>
+      <div class="cont_impact-info">
+        <div class="info-par">
+          <i class="bi bi-people"></i>
+          <strong style="font-size: xx-large;">5+</strong>
+          <p style="font-size: large;">Equipos patrocinados</p>
+        </div>
+        <div class="info-impar">
+          <i class="bi bi-people"></i>
+          <strong style="font-size: xx-large;">5+</strong>
+          <p style="font-size: large;">Equipos patrocinados</p>
+        </div>
+        <div class="info-par">
+          <i class="bi bi-people"></i>
+          <strong style="font-size: xx-large;">5+</strong>
+          <p style="font-size: large;">Equipos patrocinados</p>
+        </div>
+        <div class="info-impar">
+          <i class="bi bi-people"></i>
+          <strong style="font-size: xx-large;">5+</strong>
+          <p style="font-size: large;">Equipos patrocinados</p>
+        </div>
+      </div>
+    </div>
+    <div>
+
+      <div class="cont_conacto">
+        <h4>¿Quieres ser parte de nuestras actividades?</h4>
+        <p>Únete a nosotros en nuestras próximas actividades comunitarias y ayúdanos a seguir construyendo
+          un mejor futuro para todos.</p>
+        <button>Contactanos</button>
+      </div>
+    </div>
+  </div>
+</Main>
+<Footer>
+  <section>
+    <article class="cont_info">
+      <span><i class="bi bi-fork-knife"></i>
+        <h2 style="display: inline-block;">Torteria Gloria</h2>
+      </span>
+      <br><br>
+      <p style="font-size: larger;">"Donde cada torta cuenta una historia de sabor, tradición y amor por la
+        cocina mexicana."</p>
+      <p style="opacity: .5;">Comprometidos con la excelencia y el servicio a nuestra comunidad desde 2010.
+        Cada ingrediente es
+        seleccionado cuidadosamente para ofrecerte la mejor experiencia gastronómica.</p>
+      <small style="opacity: .5;">Hecho con <i class="bi bi-heart-fill" style="color: red;"></i> para nuestra
+        comunidad</small>
+    </article>
+    <article class="cont_redes">
+      <h4>!Contactanos¡</h4>
+      <a><i class="bi bi-whatsapp"></i> WhatsApp <br> +52 123 456 7890</a>
+      <a href="https://www.facebook.com/share/17ESKUQASf/" target="_blank"><i class="bi bi-facebook"></i>
+        Facebook</a>
+      <a href="https://www.instagram.com/torterialagloria?igsh=MTd5YjJhYmxybDk3Mg==" target="_blank"><i
+          class="bi bi-instagram"></i> Instagram</a>
+      <span>
+        <h6>Horarios de Atención:</h6>
+        <small>Lunes a Domingo: 8:00 AM - 8:00 PM</small>
+      </span>
+    </article>
+  </section>
+  <span class="derechos">
+    <p>© 2024 Tortería Gloria. Todos los derechos reservados.</p>
+    <p>Sabor auténtico, tradición familiar • Desde 2010</p>
+  </span>
+</Footer>
+
+</html>

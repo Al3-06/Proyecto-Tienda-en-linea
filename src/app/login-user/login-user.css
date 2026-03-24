@@ -1,0 +1,24 @@
+html{
+    height: 100%;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+main{
+    width: 55%;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 10px 10px 100px black;
+}
+
+.logo{
+    width: 15vh;
+    border-radius: 6em;
+    margin: auto;
+}

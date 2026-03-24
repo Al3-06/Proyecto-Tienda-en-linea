@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>información del Producto</title>
+</head>
+
+<Header class="d-flex justify-content-center align-items-center my-4">
+    <h1>Información del Producto</h1>
+</Header>
+<Main class="d-flex flex-column align-items-center m-auto p-5">
+    <div class="container d-flex flex-row gap-5">
+        <div class="container">
+            <form enctype="multipart/form-data" method="post" class="container d-flex flex-row">
+                <div class="container d-flex flex-column gap-5">
+                    <div class="cont-input">
+                        <label for="name" class="form-label">ID del pedido: <p>
+                                {{ order().order_id }}
+                            </p></label>
+                    </div>
+                    <div class="cont-input">
+                        <label for="description" class="form-label">Direccion del pedido: <p>
+                                {{ order().address }}
+                            </p></label>
+                    </div>
+                    <div class="cont-input">
+                        <label for="price" class="form-label">Precio total: <p>
+                                ${{ order().total_price }}
+                            </p></label>
+                    </div>
+                    <div class="cont-input">
+                        <label for="stock" class="form-label">Fecha del pedido: <p>
+                                {{ order().order_date }}
+                            </p></label>
+                    </div>
+                    <div class="cont-btns text-center d-flex flex-row gap-3 justify-content-center">
+                        <a href="/adminPanel" class="btn btn-danger">Regresar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</Main>
+<Footer>
+
+</Footer>
+
+</html>

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edicion Producto</title>
+</head>
+
+<Header class="d-flex justify-content-center align-items-center my-4">
+    <h1>Edición de Producto</h1>
+</Header>
+<Main class="d-flex flex-column align-items-center m-auto p-5">
+    <div class="container d-flex flex-row gap-5">
+        <div class="container">
+            <form enctype="multipart/form-data" method="post" class="container d-flex flex-row">
+                <section class=" d-flex flex-column gap-3 align-items-center m-auto">
+                    <img [src]="'img/' + product().img" alt="Vista preview" id="img-preview">
+                    <input type="file" id="img-input" accept="img/*" name="img">
+                </section>
+                <div class="container d-flex flex-column gap-5">
+                    <div class="cont-input">
+                        <label for="name" class="form-label">Nombre del producto</label>
+                        <input type="text" [(ngModel)]="product().name" id="name" class="form-control" placeholder="Torta" name="name">
+                    </div>
+                    <div class="cont-input">
+                        <label for="description" class="form-label">Descripción del producto</label>
+                        <textarea name="description" [(ngModel)]="product().description" id="description" class="form-control" placeholder="Descripción del producto"></textarea>
+                    </div>
+                    <div class="cont-input">
+                        <label for="price" class="form-label">Precio del producto</label>
+                        <input type="number" [(ngModel)]="product().price" id="price" class="form-control" placeholder="$$$" name="price">
+                    </div>
+                    <div class="cont-input">
+                        <label for="stock" class="form-label">Cantidad a actualizar del producto</label>
+                        <input type="number" [(ngModel)]="product().product_stock" id="stock" class="form-control" placeholder="100" name="stock">
+                    </div>
+                    <div class="cont-btns text-center d-flex flex-row gap-3 justify-content-center">
+                        <button type="button" class="btn btn-primary" (click)="upDateProduct(product().product_id)">Actualizar</button>
+                        <a href="/adminPanel" class="btn btn-danger">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</Main>
+<Footer>
+
+</Footer>
+
+</html>

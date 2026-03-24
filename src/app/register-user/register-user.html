@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+
+<body>
+    <Main>
+        <form action="/register" method="post" class="d-grid gap-5 p-5">
+            <h1>Registro</h1>
+            <div class="cont-input">
+                <label for="user" class="form-label">Nombre de usuario</label>
+                <br>
+                <input type="text" name="user" id="user" class="form-control" required>
+            </div>
+            <div class="cont-input">
+                <label for="email" class="form-label">Correo Electronico</label>
+                <br>
+                <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+            <div class="cont-input">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" name="password" id="password" class="form-control" aria-describedby="passwordHelpBlock" required>
+                <div id="passwordHelpBlock" class="form-text">
+                    Tu contraseña debe de tener entre 8 y 10 caracteres
+                </div>
+            </div>
+            <div class="cont-btns text-center d-flex flex-column gap-3">
+                <button class="btn btn-outline-light" type="submit">Registrarse</button>
+                <a href="/login" style="text-decoration: underline;">¿Ya tienes cuenta?</a>
+            </div>
+        </form>
+    </Main>
+
+</body>
+
+</html>

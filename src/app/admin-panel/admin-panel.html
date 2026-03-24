@@ -1,0 +1,133 @@
+<html>
+<header>
+  <a href="/admins"><img src="/img/logo.jpg" alt="logotipo" class="header-img"></a>
+  <h1 class="header-title"><strong>Panel Administrador</strong></h1>
+</header>
+<main>
+  <aside class="nav-lateral">
+    <h2 class="nav-lateral__title"><strong>Búsqueda</strong></h2>
+    <button class="nav-lateral__btn btn-inicio" title="Inicio" id="btn-search" aria-label="home" onclick="click">
+      Inicio
+    </button>
+    <button class="nav-lateral__btn btn-pedidos" title="Pedidos" id="btn-search" aria-label="orders">
+      Pedidos
+    </button>
+    <button class="nav-lateral__btn btn-productos" title="Producto" id="btn-search" aria-label="products">
+      Productos
+    </button>
+    <button class="nav-lateral__btn nav-lateral__btn-down btn-ajustes" title="Ajustes" id="btn-search"
+      aria-label="settings">
+      Ajustes
+    </button>
+  </aside>
+  <div class="view-cont">
+    <div class="cont-item view-cont-home" id="view" aria-label="home">
+      <div class="view-cont-home-marker">
+        <div class="view-cont-home-marker-info">
+          <h2><strong>1</strong></h2>
+          Productos disponibles
+        </div>
+        <div class="view-cont-home-marker-info">
+          <h2><strong>1</strong></h2>
+          Usuarios
+        </div>
+        <div class="view-cont-home-marker-info">
+          <h2><strong>1</strong></h2>
+          Pedidos
+        </div>
+      </div>
+      <div class="view-cont-home-graphic"></div>
+    </div>
+    <div class="cont-item view-cont-products" id="view" aria-label="products">
+      <div class="view-cont-products-tools">
+        <select class="form-select w-auto" aria-label="Default select example">
+          <option selected disabled>Filtro</option>
+          <option value="1">Nombre A - Z</option>
+          <option value="2">Precio Max - min</option>
+          <option value="3">Cantidad Max - min</option>
+        </select>
+        <a href="upDateProduct" class="btn btn-success"><i class="bi bi-plus-circle"></i> Agregar</a>
+      </div>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+        <button class="btn btn-outline-success" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+      <table class="table table-dark table-striped table-hover" style="margin-bottom: auto" id="table-products">
+        <thead>
+          <tr>
+            <th class="col-1">id</th>
+            <th class="col-3">Nombre</th>
+            <th class="col-2">Cantidad</th>
+            <th class="col-3">Precio</th>
+            <th class="col-2">Img</th>
+            <th class="col-1">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (product of listProducts; track product.product_id) {
+          <tr>
+            <td>{{ product.product_id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.product_stock }}</td>
+            <td>${{ product.price }}</td>
+            <td>
+              <img [src]="'/img/' + product.img" [alt]="product.product_name" style="max-height: 50px" />
+            </td>
+            <td>
+              <a [routerLink]="['/upDateProduct', { id: product.product_id }]" class="btn btn-outline-primary btn-sm">Editar</a>
+              <button (click)="deleteProduct(product.product_id)" class="btn btn-outline-danger btn-sm">Eliminar</button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="cont-item view-cont-users" id="view" aria-label="users"></div>
+    <div class="cont-item view-cont-orders" id="view" aria-label="orders">
+      <div class="view-cont-orders-tools">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+        <select class="form-select w-auto" aria-label="Default select example">
+          <option selected disabled>Filtro</option>
+          <option value="1">Nombre A - Z</option>
+          <option value="2">Precio Max - min</option>
+          <option value="3">Cantidad Max - min</option>
+        </select>
+      </div>
+      <table class="table table-dark table-striped" style="margin-bottom: auto" id="table-orders">
+        <thead>
+          <tr>
+            <th class="col-1">id</th>
+            <th class="col-2">Dirección</th>
+            <th class="col-2">Cantidad Total</th>
+            <th class="col-2">Precio Total</th>
+            <th class="col-2">Fecha</th>
+            <th class="col-1">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (order of listOrders; track order.order_id) {
+          <tr>
+            <td>{{ order.order_id }}</td>
+            <td>{{ order.address }}</td>
+            <td>{{ order.total_quantity }}</td>
+            <td>${{ order.total_price }}</td>
+            <td>{{ order.order_date }}</td>
+            <td>
+              <a [routerLink]="['/order-details', order.order_id]" class="btn btn-outline-info btn-sm">Detalles</a>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+</html>
